@@ -1,5 +1,4 @@
 adjacent list representation of graph using rocksdb
-
 # representaion
 - simple_adjlist.cpp:
     - key: vertex 
@@ -8,7 +7,6 @@ adjacent list representation of graph using rocksdb
 - link_adjlist.cpp: friendly to graph reduction and recovery in search with backtrack, inspired by "dancing link"
     - key: vertex 
     - value: next vertex; degree; first neighbor's index in neighbors; neighbors  (each: {vertex, next neighbor's index})
-
 # build
 
 requirements: rocksdb installed( librocksdb.a and lbrocksdb.so can be found by $PATH)
@@ -16,9 +14,9 @@ requirements: rocksdb installed( librocksdb.a and lbrocksdb.so can be found by $
 ```
 mkdir build
 cd build
-make rdb_example
+make link_rdb_eg
+make simple_rdb_eg
 ```
-
 # run
 
 under build/
@@ -31,7 +29,6 @@ eg:
 ```
 ./link_rdb_eg ../test_graph.txt ../link_db
 ```
-
 # reference
 
 https://github.com/facebook/rocksdb/wiki/Basic-Operations
@@ -50,12 +47,12 @@ visualization:
 
 remove vertex 9:
 
-![](./img/test_graph del9.png)
+![](./img/test_graph_del9.png)
 
 remove vertex 9 5:
 
-![](./img/test_graph del9and5.png)
+![](./img/test_graph_del9and5.png)
 
 remove vertex 9 5 6:
 
-![](./img/test_graph del9and5and6.png)
+![](./img/test_graph_del9and5and6.png)
