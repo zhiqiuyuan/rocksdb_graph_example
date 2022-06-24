@@ -1,8 +1,13 @@
-adjacent list representation of graph
+adjacent list representation of graph using rocksdb
 
-key: vertex 
+# representaion
+- simple_adjlist.cpp:
+    - key: vertex 
+    - value: neighbors (each: vertex)
 
-value: neighbor vertices
+- link_adjlist.cpp: friendly to graph reduction and recovery in search with backtrack, inspired by "dancing link"
+    - key: vertex 
+    - value: next vertex; degree; first neighbor's index in neighbors; neighbors  (each: {vertex, next neighbor's index})
 
 # build
 
@@ -13,6 +18,25 @@ mkdir build
 cd build
 make rdb_example
 ```
+
+# run
+
+under build/
+
+```
+exe_name graph_file_path db_path
+```
+
+eg: 
+```
+./link_rdb_eg ../test_graph.txt ../link_db
+```
+
+# graph
+
+test_graph.txt
+
+visualization see img folder
 
 # reference
 
