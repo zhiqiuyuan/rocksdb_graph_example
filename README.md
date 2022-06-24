@@ -32,12 +32,6 @@ eg:
 ./link_rdb_eg ../test_graph.txt ../link_db
 ```
 
-# graph
-
-test_graph.txt
-
-visualization see img folder
-
 # reference
 
 https://github.com/facebook/rocksdb/wiki/Basic-Operations
@@ -46,4 +40,22 @@ https://github.com/pmem/pmem-rocksdb/blob/master/include/rocksdb/slice.h
 
 https://github.com/facebook/rocksdb/blob/main/util/status.cc
 
+# graph
 
+test_graph.txt
+
+visualization:
+
+![](./img/test_graph.png)
+
+remove vertex 9:
+
+![](./img/test_graph del9.png)
+
+remove vertex 9 5:
+
+![](./img/test_graph del9and5.png)
+
+remove vertex 9 5 6:
+
+![](./img/test_graph del9and5and6.png)
